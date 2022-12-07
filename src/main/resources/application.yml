@@ -1,0 +1,5 @@
+server:
+  port: 3131
+token:
+  jwt-secret: stupid
+  jwt-expiration: 7200000
