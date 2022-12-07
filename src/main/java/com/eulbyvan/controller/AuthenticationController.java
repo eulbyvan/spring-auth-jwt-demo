@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/auth")
+public class AuthenticationController {
     private User user = new User("stu", "pid");
 
     @Autowired
