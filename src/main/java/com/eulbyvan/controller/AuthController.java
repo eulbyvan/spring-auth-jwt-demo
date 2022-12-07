@@ -33,10 +33,9 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("invalid username or password");
     }
 
-    @GetMapping
+    @GetMapping("/token-validation")
     public ResponseEntity validate(@RequestParam String token) {
         jwtUtil.validateToken(token);
         return ResponseEntity.ok("token is valid");
     }
-
 }
