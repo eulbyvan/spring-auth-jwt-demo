@@ -41,9 +41,9 @@ public class JwtUtil {
         } catch (MalformedJwtException e) {
             throw new UnauthorizedException("token malformed");
         } catch (SignatureException e) {
-            throw new UnauthorizedException("signature unknown");
+            throw new UnauthorizedException("invalid token");
         } catch (IllegalArgumentException e) {
-            throw new UnauthorizedException("token invalid");
+            throw new UnauthorizedException("unknown error");
         }
     }
 }

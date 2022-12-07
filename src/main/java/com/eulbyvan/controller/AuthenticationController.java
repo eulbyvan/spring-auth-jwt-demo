@@ -30,12 +30,13 @@ public class AuthenticationController {
 
         if (username.equals(reqUsername) && password.equals(reqPassword)) return ResponseEntity.ok(jwtUtil.generateToken("stupid"));
 
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("gagal bos");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("invalid username or password");
     }
 
     @GetMapping
     public ResponseEntity validate(@RequestParam String token) {
-        return ResponseEntity.ok(jwtUtil.validateToken(token));
+        boolean isValidToken = jwtUtil.validateToken(token);
+        return ResponseEntity.ok(isValidToken);
     }
 
 }
