@@ -35,8 +35,8 @@ public class AuthController {
 
     @GetMapping
     public ResponseEntity validate(@RequestParam String token) {
-        boolean isValidToken = jwtUtil.validateToken(token);
-        return ResponseEntity.ok(isValidToken);
+        jwtUtil.validateToken(token);
+        return ResponseEntity.ok("token is valid");
     }
 
 }
